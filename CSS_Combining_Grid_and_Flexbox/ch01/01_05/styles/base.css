@@ -6,48 +6,37 @@
   font-family: "Nunito", sans-serif;
   box-sizing: border-box;
 }
-.container {
-  width: 100vw;
-  height: 100vh;
+body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
-
-.main {
-  color: white;
-  background-color: rgb(64, 64, 210);
-  flex-grow: 1;
-}
-.nav-sidebar {
-  background-color: rgb(143, 143, 218);
-}
-.ads-sidebar {
-  background-color: rgb(143, 143, 218);
-}
+header,
 footer {
-  color: white;
-  background-color: blueviolet;
-  width: 100%;
+  background-color: rgba(0, 126, 126, 0.508);
 }
-
-@media screen and (min-width: 800px) {
-  .container {
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Flex-grow and flex-shrink are both set to one while flex-basis is set to 0 */
+}
+article.main {
+  background-color: aliceblue;
+  flex: 1;
+}
+aside {
+  background-color: antiquewhite;
+}
+@media (min-width: 768px) {
+  main {
+    width: 80%;
+    margin: 0 auto;
     flex-direction: row;
-    flex-wrap: wrap;
+  }
+  aside {
+    flex: 0 0 20%;
   }
   .nav-sidebar {
-    order: 1;
-  }
-  .main {
-    order: 2;
-    flex-grow: 1;
-    height: 100%;
-  }
-  .ads-sidebar {
-    order: 3;
-  }
-  footer {
-    order: 4;
-    flex-basis: 100%;
+    order: -1;
   }
 }
